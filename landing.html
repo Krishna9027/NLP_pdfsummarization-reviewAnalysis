@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            display: block;
+            margin: 10px 0;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Text Summarization</h1>
+        <form action="{{ url_for('getSummary') }}" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <input type="file" name="file" accept=".pdf" required>
+            <button type="submit">Get Summary</button>
+        </form>
+        <div class="output">
+            {{ output }}
+        </div>
+         <div class="container">
+     <form action="{{ url_for('getSentiment')}}"method='POST' enctype='multipart/form-data'>
+        <textarea id="input" placeholder="Enter Your Text area"></textarea>
+        <button type="submit" class="btn btn-primary btn-block btn-large">getSentiment</button>
+
+    </form>
+
+
+   </div>
+    </div>
+   
+</body>
+</html>

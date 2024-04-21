@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+</head>
+<body>
+    <h1>Text Summarization</h1>
+    <form id="textSummarizationForm" enctype="multipart/form-data">
+        <label for="textInput">Input Text:</label><br>
+        <textarea id="textInput" name="textInput" rows="10" cols="50"></textarea><br>
+        <label for="fileInput">Or Upload PDF:</label><br>
+        <input type="file" id="fileInput" name="fileInput"><br>
+        <input type="submit" value="Summarize">
+    </form>
+    <div id="output"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
